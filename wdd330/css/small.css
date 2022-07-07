@@ -1,0 +1,158 @@
+
+
+
+/* MAIN PAGE MOVIE CARD START */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+body{
+    background-color: #023047;
+    font-family: 'montserrat',sans-serif;
+    font-size: 1rem;
+    color: #444444;
+}
+h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    padding-bottom: 0;
+}
+.post-wrap {
+    min-width: 330px;
+    max-width: 330px;
+    height: 600px;
+    perspective: 1000px;
+    flex: 1;
+    margin: 0 15px 85px;
+}
+.post {
+    position: relative; /* Required to absolutely position the faces */
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+.post-front, .post-back {
+    position: absolute;
+    width: 100%;
+    height: 590px;
+    background-color: white;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+.post-back {
+    transform: rotateY(180deg);
+}
+.post-wrap:hover .post {
+    transform: rotateY(180deg);
+}
+.post-img {
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.post-info {
+    padding: 20px 30px 30px;
+    position: relative;
+    top: -69px;
+
+}
+.post-info span {
+    font-size: 0.8rem;
+    top: -500px;
+    left: 215px;
+}
+.post-info h2{
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding-top: 5px;
+    text-align: center;
+}
+.post-back {
+    background-color: #ffffff;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* To push the read more button to bottom */
+    align-items: flex-start; /* To position the read more button at the left */
+}
+.post-back h2{
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding-top: 5px;
+}
+.post-back p {
+    margin-top: 10px;
+    line-height: 1.6;
+}
+.post-back a{
+    text-decoration: none;
+    color: white;
+    background-color: #FB8500;
+    padding: 10px 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.post-except .movie-title {
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 2em;
+    margin-bottom: .5em;
+
+}
+.post-except .synopsis {
+    text-align: left;
+    margin-bottom: 3em;
+    max-height: 356px;
+    overflow: hidden;
+}
+.post-except .button {
+    position: absolute;
+    top: 500px;
+    left: 115px;
+    border: none;
+}
+.rating {
+    margin-left: 1px;
+    border: 4px solid #413e3e;
+    background-color: #219EBC;
+    color: white;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    position: relative;
+    top: -475px;
+    left: 230px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    font-size: 2em;;
+}
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px;
+    padding-top: 0px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Required to position the posts one below the other on smaller devices */
+}
+
+
+/* MAIN PAGE MOVIE CARD END */
