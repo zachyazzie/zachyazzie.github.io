@@ -15,7 +15,7 @@ export function displayPage(titleDetails) {
     title.innerText = titleDetails.name;
 
     let synopsis = document.createElement('p');
-    synopsis.setAttribute('class', 'standalone-synopsis');
+    synopsis.setAttribute('class', 'standalone-synopsis'); 
     synopsis.innerText = titleDetails.overview;
 
     let rating = document.createElement('h2');

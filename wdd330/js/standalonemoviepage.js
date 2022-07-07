@@ -11,7 +11,7 @@ export function displayPage(titleDetails) {
     poster.src = imagesrc;
 
     let title = document.createElement('h1');
-    title.setAttribute('class', 'standalone-title');
+    title.setAttribute('class', 'standalone-title'); 
     title.innerText = titleDetails.original_title;
 
     let synopsis = document.createElement('p');

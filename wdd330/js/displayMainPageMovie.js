@@ -11,7 +11,7 @@ export function displayTrending(trendingArray) {
         let movie_div = document.createElement("div");
         movie_div.setAttribute('class', 'movie-card');
 
-        let post_wrap = document.createElement("div");
+        let post_wrap = document.createElement("div"); 
         post_wrap.setAttribute('class', 'post-wrap')
 
         let post = document.createElement("div");

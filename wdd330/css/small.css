@@ -105,7 +105,7 @@ h1 {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-size: 1em;
-    font-weight: bold;
+    font-weight: bold; 
     border-radius: 5px;
 }
 .post-except .movie-title {
@@ -115,7 +115,7 @@ h1 {
     margin-bottom: .5em;
 
 }
-.post-except .synopsis {
+.post-except .synopsis { 
     text-align: left;
     margin-bottom: 3em;
     max-height: 356px;

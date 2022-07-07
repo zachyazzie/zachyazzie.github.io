@@ -10,11 +10,11 @@ export function displayTrending(trendingArray) {
 
         let post_wrap = document.createElement("div");
         post_wrap.setAttribute('class', 'post-wrap')
-
+ 
         let post = document.createElement("div");
         post.setAttribute('class', 'post');
 
-        let post_front = document.createElement("div");
+        let post_front = document.createElement("div"); 
         post_front.setAttribute('class', 'post-front');
 
         let post_back = document.createElement("div");
