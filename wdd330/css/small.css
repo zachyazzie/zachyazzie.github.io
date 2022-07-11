@@ -13,7 +13,7 @@ html, body {
     height: 100%;
 }
 body{
-    background-color: #023047;
+    background-color: #242728;
     font-family: 'montserrat',sans-serif;
     font-size: 1rem;
     color: #444444;
@@ -156,3 +156,27 @@ h1 {
 
 
 /* MAIN PAGE MOVIE CARD END */
+
+/* STANDALONE PAGE START */
+
+.standalone-container {
+    display: flex;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1em;
+    margin-right: 1em;
+
+}
+.rating-date-div {
+    display: flex;
+}
+.standalone-poster {
+    margin-top: 2em;
+}
+.standalone-poster img {
+    border-radius: 10px;;
+}
+
+
+/* STANDALONE PAGE END */

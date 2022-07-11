@@ -3,10 +3,16 @@ let queryString = location.search.substring(1);
 export function displayPage(titleDetails) {
     console.log(titleDetails)    
 
-    let div = document.createElement("div");
-    const imagesrc = `https://image.tmdb.org/t/p/w500${titleDetails.poster_path}`;
+    let infoDiv = document.createElement("div");
+    let imgDiv = document.createElement("div");
+    let synopsisDiv = document.createElement("div")
+    let ratingDateDiv = document.createElement("div");
+    ratingDateDiv.setAttribute('class', 'rating-date-div');
+    
+    let standalonePoster = document.createElement('div');
+    const imagesrc = `https://image.tmdb.org/t/p/w300${titleDetails.poster_path}`;
     let poster = document.createElement("img");
-    poster.setAttribute('class', 'standalone-poster');
+    imgDiv.setAttribute('class', 'standalone-poster');
     poster.setAttribute('alt', `${titleDetails.original_title} poster`);
     poster.src = imagesrc;
 
@@ -18,22 +24,31 @@ export function displayPage(titleDetails) {
     synopsis.setAttribute('class', 'standalone-synopsis');
     synopsis.innerText = titleDetails.overview;
 
-    let rating = document.createElement('h2');
+    let ratingDiv = document.createElement('div');
+    let rating = document.createElement('p');
     rating.setAttribute('class', 'standalone-rating');
-    rating.innerText = Math.round(titleDetails.vote_average * 10) / 10;
+    rating.innerText = `User rating: ${Math.round(titleDetails.vote_average * 10) / 10}`;
+    ratingDiv.setAttribute('class', 'standalone-rating-div');
+    ratingDiv.appendChild(rating);
 
+    let releaseDiv = document.createElement('div');
     let release = document.createElement('p');
     release.setAttribute('class', 'standalone-release');
-    release.innerText = titleDetails.release_date
+    release.innerText = `Release date: ${titleDetails.release_date}`;
+    releaseDiv.setAttribute('class', 'standalone-release-div');
+    releaseDiv.appendChild(release);
 
+    infoDiv.appendChild(title);
+    imgDiv.appendChild(poster);
+    synopsisDiv.appendChild(synopsis);
+    ratingDateDiv.appendChild(rating);
+    ratingDateDiv.appendChild(release);
 
-    div.appendChild(title);
-    div.appendChild(poster);
-    div.appendChild(synopsis);
-    div.appendChild(rating);
-    div.appendChild(release);
+    infoDiv.appendChild(synopsisDiv);
+    infoDiv.appendChild(ratingDateDiv);
 
-    document.querySelector('.standalone-container').appendChild(div)
+    document.querySelector('.standalone-container').appendChild(infoDiv);
+    document.querySelector('.standalone-container').appendChild(imgDiv);
 }
 var requestOptions = {
     method: 'GET',
