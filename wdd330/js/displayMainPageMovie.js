@@ -4,7 +4,7 @@ export function displayTrending(trendingArray) {
 
     trendingArray.forEach(movie => {    
         //create parent article to hold all elements
-        console.log(movie)
+
         let container = document.createElement("div");
         container.setAttribute('class', 'container')
 
@@ -62,14 +62,13 @@ export function displayTrending(trendingArray) {
 
         //create button
         let button = document.createElement('button')
+        button.setAttribute('type', 'button');
         button.setAttribute('class', 'button');
-        button.addEventListener('click', loadPage);
+        button.onclick = loadPage;
 
         function loadPage() {
-            let movieData = movie;
-            sessionStorage.setItem('movieData', movieData);
-            window.location.href = `standalonemoviepage.html?${movie.id}`;
-
+            console.log('hello');
+            location.href = `standalonemoviepage.html?${movie.id}`;
         }
         
         let button_link = document.createElement('a');

@@ -13,7 +13,7 @@ html, body {
     height: 100%;
 }
 body{
-    background-color: #242728;
+    background-color: white;
     font-family: 'montserrat',sans-serif;
     font-size: 1rem;
     color: #444444;
@@ -25,6 +25,38 @@ h1 {
     margin-top: 1em;
     padding-bottom: 0;
 }
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FB8500;
+    padding-bottom: 2em;
+}
+.header h1 {
+    color: #FFF;
+    border-bottom: 2px solid #FFF;
+    padding-bottom: .25em;
+    width: 60%
+}
+.header a {
+    color: #FFF;
+    text-decoration: none;
+}
+.header a:hover {
+    color: #023047;
+
+}
+.header h4 {
+    margin-bottom: .5em;
+    color: #FFF
+}
+.header-top-link {
+    margin-bottom: 1em;
+    margin-top: 0;
+}
+
 .post-wrap {
     min-width: 330px;
     max-width: 330px;
@@ -118,14 +150,13 @@ h1 {
 .post-except .synopsis { 
     text-align: left;
     margin-bottom: 3em;
-    max-height: 356px;
+    max-height: 312px;
     overflow: hidden;
 }
 .post-except .button {
-    position: absolute;
-    top: 500px;
-    left: 115px;
+    position: relative;
     border: none;
+    z-index: 1000;
 }
 .rating {
     margin-left: 1px;
@@ -159,17 +190,29 @@ h1 {
 
 /* STANDALONE PAGE START */
 
-.standalone-container {
+.standalone-container, .standalone-container-tv {
     display: flex;
-    color: white;
+    color: black;
     flex-direction: column;
     align-items: center;
     margin-left: 1em;
     margin-right: 1em;
-
 }
+
+.standalone-container h1, .standalone-container-tv h1 {
+    color: black;
+}
+
 .rating-date-div {
     display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+.standalone-rating {
+    margin-right: 1em;
+}
+.standlone-release {
+    margin-left: 1em;
 }
 .standalone-poster {
     margin-top: 2em;
@@ -177,6 +220,43 @@ h1 {
 .standalone-poster img {
     border-radius: 10px;;
 }
-
+.genres {
+    text-align: center;
+    margin-top: 1em;
+}
+.networks {
+    text-align: center;
+    margin-top: 1em;
+}
+.network-logo{
+    width: 100px;
+    margin-left: 1em;
+}
+.network-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
 
 /* STANDALONE PAGE END */
+
+/* INDEX START */
+.buttons-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.buttons span{
+    font-size: 3em;
+}
+.movie-button {
+    width: 150px;
+    height: 150px;
+}
+.tv-button {
+    width: 150px;
+    height: 150px;
+}
+/* INDEX END */
