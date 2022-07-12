@@ -26,35 +26,61 @@ h1 {
     padding-bottom: 0;
 }
 
-.header {
+header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #FB8500;
-    padding-bottom: 2em;
 }
-.header h1 {
+header h1 {
     color: #FFF;
     border-bottom: 2px solid #FFF;
     padding-bottom: .25em;
-    width: 60%
+    width: 300px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
-.header a {
+header a {
     color: #FFF;
     text-decoration: none;
 }
-.header a:hover {
+header a:hover {
     color: #023047;
-
 }
-.header h4 {
+header ul{
+ list-style: none;
+ text-align: center;;
+}
+
+.active h3{
+    color:#444444;
+    text-decoration: underline;
+}
+
+@media only screen and (min-width: 700px) {
+    header ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+    }
+    .header-top-link h3 {
+        margin-right: 1em;
+    }
+    header {
+        padding-bottom: 0;
+    }
+}
+header h4 {
     margin-bottom: .5em;
     color: #FFF
 }
 .header-top-link {
-    margin-bottom: 1em;
+    margin-bottom: .5em;
     margin-top: 0;
+}
+.header-bottom-link {
+    padding-bottom: 1em;
 }
 
 .post-wrap {
@@ -76,7 +102,8 @@ h1 {
     position: absolute;
     width: 100%;
     height: 590px;
-    background-color: white;
+    color: white;
+    background-color: #413e3e;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 10px;
@@ -113,7 +140,7 @@ h1 {
     text-align: center;
 }
 .post-back {
-    background-color: #ffffff;
+    background-color: #413e3e;
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -139,6 +166,7 @@ h1 {
     font-size: 1em;
     font-weight: bold; 
     border-radius: 5px;
+    cursor: pointer
 }
 .post-except .movie-title {
     text-align: center;
@@ -173,7 +201,7 @@ h1 {
     top: -475px;
     left: 230px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    font-size: 2em;;
+    font-size: 2em;
 }
 .container {
     max-width: 1200px;
@@ -182,9 +210,13 @@ h1 {
     padding-top: 0px;
     display: flex;
     justify-content: center;
+    margin-top: 2em;
     flex-wrap: wrap; /* Required to position the posts one below the other on smaller devices */
 }
-
+.page-title {
+    text-align: center;
+    margin-top: 1.5em;
+}
 
 /* MAIN PAGE MOVIE CARD END */
 
@@ -195,8 +227,8 @@ h1 {
     color: black;
     flex-direction: column;
     align-items: center;
-    margin-left: 1em;
-    margin-right: 1em;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 .standalone-container h1, .standalone-container-tv h1 {
@@ -210,26 +242,38 @@ h1 {
 }
 .standalone-rating {
     margin-right: 1em;
+    display: flex;
+    justify-content: center;
 }
-.standlone-release {
+.standalone-release {
     margin-left: 1em;
+    display: flex;
+    justify-content: center;
 }
-.standalone-poster {
-    margin-top: 2em;
+
+.backdrop-path img {
+    width: 1200px;
+    height: 325px;
+    object-fit: cover;
 }
-.standalone-poster img {
-    border-radius: 10px;;
+@media only screen and (min-width: 700px) {
+    .backdrop-path img {
+        height: 500px;
+    } 
 }
 .genres {
     text-align: center;
     margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
 }
 .networks {
     text-align: center;
-    margin-top: 1em;
+
 }
 .network-logo{
-    width: 100px;
+    width: 80px;
     margin-left: 1em;
 }
 .network-div {
@@ -237,6 +281,22 @@ h1 {
     justify-content: center;
     align-items: center;
     margin-top: 1em;
+}
+.info-div{
+    margin-left: 1em;
+    margin-right: 1em;
+}
+.homepage a{
+    text-decoration: none;
+    background-color: #219EBC;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+}
+.homepage {
+    margin-top: 2em;
+    justify-content: center;
+    display: flex;
 }
 
 /* STANDALONE PAGE END */

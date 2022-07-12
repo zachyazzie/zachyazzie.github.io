@@ -17,13 +17,13 @@
         ratingDateDiv.setAttribute('class', 'rating-date-div');
         
         let standalonePoster = document.createElement('div');
-        const imagesrc = `https://image.tmdb.org/t/p/w300${titleDetails.poster_path}`;
+        const imagesrc = `https://image.tmdb.org/t/p/w1280${titleDetails.backdrop_path}`;
         let poster = document.createElement("img");
-        imgDiv.setAttribute('class', 'standalone-poster');
-        poster.setAttribute('alt', `${titleDetails.original_name} poster`);
+        imgDiv.setAttribute('class', 'backdrop-path');
+        poster.setAttribute('alt', `${titleDetails.name} background`);
         poster.src = imagesrc;
     
-        let genre = document.createElement('p');
+        let genre = document.createElement('div');
         genre.setAttribute('class', 'genres');
 
         let genreArr = [];
@@ -32,10 +32,10 @@
         }
         genreArr = genreArr.toString();
         genreArr = genreArr.slice(1)
-        genre.innerText = `Genre(s): ${genreArr}`;
+        genre.innerHTML = `<h4>Genre(s):</h4> <p>&nbsp;${genreArr}</p>`;
         genreDiv.appendChild(genre);
         
-        let network = document.createElement('p');
+        let network = document.createElement('h4');
         network.setAttribute('class', 'networks');
         let networkPath = `http://image.tmdb.org/t/p/w300/${titleDetails.networks[0].logo_path}`;
         console.log(networkPath);
@@ -51,23 +51,23 @@
 
         let title = document.createElement('h1');
         title.setAttribute('class', 'standalone-title'); 
-        title.innerText = titleDetails.original_name;
+        title.innerText = titleDetails.name;
     
         let synopsis = document.createElement('p');
         synopsis.setAttribute('class', 'standalone-synopsis');
         synopsis.innerText = titleDetails.overview;
     
         let ratingDiv = document.createElement('div');
-        let rating = document.createElement('p');
+        let rating = document.createElement('div');
         rating.setAttribute('class', 'standalone-rating');
-        rating.innerText = `User rating: ${Math.round(titleDetails.vote_average * 10) / 10}`;
+        rating.innerHTML = `<h4>User rating:</h4> <p>&nbsp;${Math.round(titleDetails.vote_average * 10) / 10}</p>`;
         ratingDiv.setAttribute('class', 'standalone-rating-div');
         ratingDiv.appendChild(rating);
     
         let releaseDiv = document.createElement('div');
-        let release = document.createElement('p');
+        let release = document.createElement('div');
         release.setAttribute('class', 'standalone-release');
-        release.innerText = `Air date: ${titleDetails.first_air_date}`;
+        release.innerHTML = `<h4>Air date:</h4> <p>&nbsp;${titleDetails.first_air_date}</p>`;
         releaseDiv.setAttribute('class', 'standalone-release-div');
         releaseDiv.appendChild(release);
     
@@ -81,8 +81,9 @@
         infoDiv.appendChild(ratingDateDiv);
         infoDiv.appendChild(genreDiv)
         infoDiv.append(networkDiv);
-        document.querySelector('.standalone-container-tv').appendChild(infoDiv);
         document.querySelector('.standalone-container-tv').appendChild(imgDiv);
+        document.querySelector('.standalone-container-tv').appendChild(infoDiv);
+        
     }
     var requestOptions = {
         method: 'GET',
