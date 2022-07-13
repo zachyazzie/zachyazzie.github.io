@@ -4,8 +4,6 @@
     export function displayPage(titleDetails) {
         console.log(titleDetails);
 
-        
-    
         let infoDiv = document.createElement("div");
         infoDiv.setAttribute('class', 'info-div');
         let imgDiv = document.createElement("div");
@@ -16,12 +14,8 @@
         networkDiv.setAttribute('class', 'network-div');
         ratingDateDiv.setAttribute('class', 'rating-date-div');
         
-        let standalonePoster = document.createElement('div');
-        const imagesrc = `https://image.tmdb.org/t/p/w1280${titleDetails.backdrop_path}`;
-        let poster = document.createElement("img");
-        imgDiv.setAttribute('class', 'backdrop-path');
-        poster.setAttribute('alt', `${titleDetails.name} background`);
-        poster.src = imagesrc;
+        
+        
     
         let genre = document.createElement('div');
         genre.setAttribute('class', 'genres');
@@ -35,19 +29,21 @@
         genre.innerHTML = `<h4>Genre(s):</h4> <p>&nbsp;${genreArr}</p>`;
         genreDiv.appendChild(genre);
         
-        let network = document.createElement('h4');
-        network.setAttribute('class', 'networks');
-        let networkPath = `http://image.tmdb.org/t/p/w300/${titleDetails.networks[0].logo_path}`;
-        console.log(networkPath);
-        let networkLogo = document.createElement('img');
-        let showLocation = document.createElement('a');
-        networkLogo.setAttribute('src', `${networkPath}`);
-        networkLogo.setAttribute('class', 'network-logo');
-        network.innerText = 'Where to watch:';
-        showLocation.href = titleDetails.homepage;
-        showLocation.appendChild(networkLogo);
-        networkDiv.appendChild(network);
-        networkDiv.appendChild(showLocation);
+        if (titleDetails.homepage != "") {
+            let network = document.createElement('h4');
+            network.setAttribute('class', 'networks');
+            let networkPath = `http://image.tmdb.org/t/p/w300/${titleDetails.networks[0].logo_path}`;
+            let networkLogo = document.createElement('img');
+            let showLocation = document.createElement('a');
+            networkLogo.setAttribute('src', `${networkPath}`);
+            networkLogo.setAttribute('class', 'network-logo');
+            network.innerText = 'Where to watch:';
+            showLocation.href = titleDetails.homepage;
+            showLocation.appendChild(networkLogo);
+            networkDiv.appendChild(network);
+            networkDiv.appendChild(showLocation);
+            }
+        
 
         let title = document.createElement('h1');
         title.setAttribute('class', 'standalone-title'); 
@@ -72,7 +68,16 @@
         releaseDiv.appendChild(release);
     
         infoDiv.appendChild(title);
-        imgDiv.appendChild(poster);
+
+        if(titleDetails.backdrop_path != null) {
+            const imagesrc = `https://image.tmdb.org/t/p/w1280${titleDetails.backdrop_path}`;
+            let poster = document.createElement("img");
+            imgDiv.setAttribute('class', 'backdrop-path');
+            poster.setAttribute('alt', `${titleDetails.name} background`);
+            poster.src = imagesrc;
+            imgDiv.appendChild(poster);
+        }
+    
         synopsisDiv.appendChild(synopsis);
         ratingDateDiv.appendChild(rating);
         ratingDateDiv.appendChild(release);

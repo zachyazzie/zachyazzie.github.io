@@ -16,7 +16,12 @@
 			<li class="header-bottom-link active">
 				<a href="trendingtv.html"><h3>Trending TV</h3></a>
 			</li>
+			<li class="search-bar">
+					<input id="searchInput" type="text" placeholder="Movie or TV title">
+					<input type="submit" value="Search" onclick="return location.href = `searchpage.html?${searchInput.value}`"/>		
+			</li>
 		</ul>
+		
 	</header>
     <h2 class="page-title">This week's trending TV shows:</h2>
     <div class="container"></div>

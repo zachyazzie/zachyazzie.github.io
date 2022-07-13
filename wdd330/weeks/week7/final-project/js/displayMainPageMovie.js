@@ -67,7 +67,6 @@ export function displayTrending(trendingArray) {
         button.onclick = loadPage;
 
         function loadPage() {
-            console.log('hello');
             location.href = `standalonemoviepage.html?${movie.id}`;
         }
         

@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Game Card</title>
 	<link rel="stylesheet" href="css/small.css" />
+	<script src="https://kit.fontawesome.com/d9ebc4bd10.js" crossorigin="anonymous"></script>
 </head>
 <body>
 	<header>
@@ -16,7 +17,12 @@
 			<li class="header-bottom-link">
 				<a href="trendingtv.html"><h3>Trending TV</h3></a>
 			</li>
+			<li class="search-bar">
+					<input id="searchInput" type="text" placeholder="Movie or TV title">
+					<input type="submit" value="Search" onclick="return location.href = `searchpage.html?${searchInput.value}`"/>		
+			</li>
 		</ul>
+		
 	</header>
 	<h2 class="page-title">This week's trending movies:</h2>
     <div class="container"></div>
@@ -24,5 +30,6 @@
 	<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 	<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="js/movieapipull.js" type="module"></script>
+	
 </body>
 </html>  

@@ -14,12 +14,8 @@ let queryString = location.search.substring(1);
         networkDiv.setAttribute('class', 'network-div');
         ratingDateDiv.setAttribute('class', 'rating-date-div');
         
-        let standalonePoster = document.createElement('div');
-        const imagesrc = `https://image.tmdb.org/t/p/w1280${titleDetails.backdrop_path}`;
-        let poster = document.createElement("img");
-        imgDiv.setAttribute('class', 'backdrop-path');
-        poster.setAttribute('alt', `${titleDetails.name} background`);
-        poster.src = imagesrc;
+        
+            
     
         let genre = document.createElement('div');
         genre.setAttribute('class', 'genres');
@@ -33,13 +29,7 @@ let queryString = location.search.substring(1);
         genre.innerHTML = `<h4>Genre(s):</h4> <p>&nbsp;${genreArr}</p>`;
         genreDiv.appendChild(genre);
         
-        let homepage = document.createElement('h4');
-        homepage.setAttribute('class', 'homepage');
-        let site = document.createElement('a');
-        site.innerText = 'Official Website';
-        site.href = titleDetails.homepage;
-        homepage.appendChild(site);
-        console.log(homepage);
+        
 
         let title = document.createElement('h1');
         title.setAttribute('class', 'standalone-title'); 
@@ -64,7 +54,17 @@ let queryString = location.search.substring(1);
         releaseDiv.appendChild(release);
     
         infoDiv.appendChild(title);
-        imgDiv.appendChild(poster);
+
+        if (titleDetails.backdrop_path != null)  {
+            const imagesrc = `https://image.tmdb.org/t/p/w1280${titleDetails.backdrop_path}`;
+            let poster = document.createElement("img");
+            imgDiv.setAttribute('class', 'backdrop-path');
+            poster.setAttribute('alt', `${titleDetails.name} background`);
+            poster.src = imagesrc;
+            imgDiv.appendChild(poster);
+        }
+        
+        
         synopsisDiv.appendChild(synopsis);
         ratingDateDiv.appendChild(rating);
         ratingDateDiv.appendChild(release);
@@ -72,7 +72,17 @@ let queryString = location.search.substring(1);
         infoDiv.appendChild(synopsisDiv);
         infoDiv.appendChild(ratingDateDiv);
         infoDiv.appendChild(genreDiv)
-        infoDiv.append(homepage);
+        if (titleDetails.homepage != "") {
+            let homepage = document.createElement('h4');
+            homepage.setAttribute('class', 'homepage');
+            let site = document.createElement('a');
+            site.innerText = 'Official Website';
+            site.href = titleDetails.homepage;
+            homepage.appendChild(site);
+            console.log(homepage);
+            infoDiv.append(homepage);
+        }
+        
         document.querySelector('.standalone-container').appendChild(imgDiv);
         document.querySelector('.standalone-container').appendChild(infoDiv);
         
