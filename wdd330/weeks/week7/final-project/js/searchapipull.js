@@ -204,23 +204,20 @@ var requestOptions = {
 
     fetch(`https://api.themoviedb.org/3/search/multi?api_key=d5c0cd4c83f8a5b0f84f1923dfaa2281&language=en-US&query=${queryString}&page=1&include_adult=false`, requestOptions)
     .then(response => response.json())
-    .then(result =>  result.results.forEach(result => {
-        if (result.media_type == "movie") {
-            if(result.overview != ""){
-                if(result.poster_path != null){
-                    displayMovies(result);
-                }              
+    .then(result => result.results.forEach(result => {
+            if (result.media_type == "movie") {
+                if(result.overview != ""){
+                    if(result.poster_path != null){
+                        displayMovies(result);
+                    }              
+                }
             }
-        }
-        else if (result.media_type == "tv") {
-            if(result.overview != ""){
-                if(result.poster_path != null){
-                    displayTV(result);
-                } 
-            }
-            
-        }
+            else if (result.media_type == "tv") {
+                if(result.overview != ""){
+                    if(result.poster_path != null){
+                        displayTV(result);
+                    } 
+                }
+    } 
     }))
     .catch(error => console.log('error', error));
-
-
