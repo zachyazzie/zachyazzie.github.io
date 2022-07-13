@@ -1,0 +1,13 @@
+img {
+    width: 600px;
+}
+body {
+    font-family: 'Inter', sans-serif;
+}
+a h1{
+    color: black;
+    text-decoration: none;
+}
+ul {
+    font-size: 2em;
+}
