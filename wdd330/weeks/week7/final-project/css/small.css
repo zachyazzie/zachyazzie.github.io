@@ -186,7 +186,7 @@ header h4 {
 .post-except .synopsis { 
     text-align: left;
     margin-bottom: 3em;
-    max-height: 312px;
+    max-height: 260px;
     overflow: hidden;
 }
 .post-except .button {
