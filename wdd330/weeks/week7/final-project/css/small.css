@@ -149,8 +149,8 @@ header h4 {
     padding: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* To push the read more button to bottom */
-    align-items: flex-start; /* To position the read more button at the left */
+    justify-content: space-between;
+    align-items: flex-start;
 }
 .post-back h2{
     font-weight: bold;
